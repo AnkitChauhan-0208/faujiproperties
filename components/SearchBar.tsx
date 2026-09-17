@@ -1,0 +1,12 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
+
+export function SearchBar() {
+  const router = useRouter();
+  const [location, setLocation] = useState("");
+  const [type, setType] = useState("");
+  const [budget, setBudget] = useState("");
+  function handleSubmit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); const params = new URLSearchParams(); if (location) params.set("location", location); if (type) params.set("type", type); if (budget) params.set("budget", budget); router.push(`/properties${params.size ? `?${params.toString()}` : ""}`); }
+  return <form suppressHydrationWarning onSubmit={handleSubmit} className="grid gap-4 rounded-2xl border border-[#d2dfda] bg-white p-5 shadow-[0_12px_30px_rgb(23_43_45_/_8%)] md:grid-cols-[1.1fr_1fr_1fr_auto] md:items-end" aria-label="Search properties"><label className="grid gap-2 text-sm font-bold text-[var(--brand-dark)]">Location<input value={location} onChange={(event) => setLocation(event.target.value)} placeholder="City or area" className="min-h-12 rounded-lg border border-[var(--line)] px-3 font-normal text-slate-700 outline-none placeholder:text-slate-400 focus:border-[var(--brand)] focus:ring-2 focus:ring-[#d9e8e3]" /></label><label className="grid gap-2 text-sm font-bold text-[var(--brand-dark)]">Property type<select value={type} onChange={(event) => setType(event.target.value)} className="min-h-12 rounded-lg border border-[var(--line)] bg-white px-3 font-normal text-slate-700 outline-none focus:border-[var(--brand)] focus:ring-2 focus:ring-[#d9e8e3]"><option value="">Any type</option><option value="Villa">Villa</option><option value="House">House</option><option value="Land">Land</option><option value="Apartment">Apartment</option><option value="Plot">Plot</option></select></label><label className="grid gap-2 text-sm font-bold text-[var(--brand-dark)]">Budget<select value={budget} onChange={(event) => setBudget(event.target.value)} className="min-h-12 rounded-lg border border-[var(--line)] bg-white px-3 font-normal text-slate-700 outline-none focus:border-[var(--brand)] focus:ring-2 focus:ring-[#d9e8e3]"><option value="">Any budget</option><option value="under-50">Under ₹50 Lakhs</option><option value="50-75">₹50–75 Lakhs</option><option value="75-plus">₹75 Lakhs+</option></select></label><button type="submit" className="button-primary w-full">Search</button></form>;
+}

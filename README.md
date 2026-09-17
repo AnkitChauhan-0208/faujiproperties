@@ -1,3 +1,7 @@
+# Fauji Properties Website
+
+> 📖 **Architecture & Tech Stack Documentation**: For a complete analysis of tech stacks, database schemas, and end-to-end project flows, see [PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md).
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
