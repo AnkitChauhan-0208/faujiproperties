@@ -63,7 +63,7 @@ export async function notifyNewEnquiry(enquiryId: string) {
   }
   if (!settings?.notification_enabled) return;
 
-  const recipient = settings.email?.trim() || process.env.ADMIN_EMAIL?.trim();
+  const recipient = process.env.RESEND_NOTIFICATION_EMAIL?.trim() || settings.email?.trim() || process.env.ADMIN_EMAIL?.trim();
   if (!apiKey || !from || !recipient) {
     console.error("Enquiry notification skipped: RESEND_API_KEY, RESEND_FROM_EMAIL, and an admin email are required.");
     return;

@@ -368,7 +368,8 @@ By design (enacted in migration `0007_restrict_admin_data_policies.sql`), the pu
 | `CLOUDINARY_API_KEY` | Server-Only | **Yes** | Cloudinary API Key for server-side image deletion. |
 | `CLOUDINARY_API_SECRET` | Server-Only | **Yes** | Cloudinary API Secret for server-side image deletion. |
 | `RESEND_API_KEY` | Server-Only | **Yes** | API key from Resend for sending notification emails. |
-| `RESEND_FROM_EMAIL` | Server-Only | **Yes** | Verified sender email (e.g. `onboarding@resend.dev` or domain). |
+| `RESEND_FROM_EMAIL` | Server-Only | **Yes** | Verified sender email, e.g. `Fauji Properties <enquiries@faujiproperties.in>`. |
+| `RESEND_NOTIFICATION_EMAIL` | Server-Only | **Yes** | Inbox which receives each new enquiry notification. Overrides the public business contact email. |
 | `SITE_URL` | Server-Only | **Yes** | Canonical site URL (e.g. `https://faujiproperties.com` or `http://localhost:3000`). |
 
 ---
