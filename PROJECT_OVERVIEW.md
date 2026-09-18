@@ -356,8 +356,8 @@ By design (enacted in migration `0007_restrict_admin_data_policies.sql`), the pu
 
 | Variable Name | Environment | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_SUPABASE_URL` | Client & Server | **Yes** | HTTPS URL of the Supabase project. |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Client & Server | **Yes** | Public Supabase anonymous API key. |
+| `SUPABASE_URL` | Client & Server | **Yes** | HTTPS URL of the Supabase project. |
+| `SUPABASE_ANON_KEY` | Client & Server | **Yes** | Public Supabase anonymous API key. |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server-Only | **Yes** | Privileged Supabase service role key (Never exposed to client). |
 | `ADMIN_EMAIL` | Server-Only | **Yes** | Email address authorized for admin dashboard access. |
 | `NEXT_PUBLIC_ADMIN_INACTIVITY_TIMEOUT_MINUTES` | Client | No | Minutes of inactivity before auto-logout (default: 5 to 15). |

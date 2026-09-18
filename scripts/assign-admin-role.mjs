@@ -1,11 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const adminEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
 
 if (!supabaseUrl || !serviceRoleKey || !adminEmail) {
-  throw new Error("NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and ADMIN_EMAIL are required.");
+  throw new Error("SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and ADMIN_EMAIL are required.");
 }
 
 const supabase = createClient(supabaseUrl, serviceRoleKey, {

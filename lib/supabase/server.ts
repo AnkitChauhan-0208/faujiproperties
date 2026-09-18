@@ -11,8 +11,8 @@ export async function createSupabaseServerClient(options: SupabaseServerClientOp
   const sessionOnly = options.sessionOnly ?? cookieStore.get(ADMIN_SESSION_MODE_COOKIE)?.value === "session";
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -55,7 +55,7 @@ export async function createAuthorizedAdminClient() {
     throw new Error("Supabase service role configuration is missing.");
   }
 
-  return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, serviceRoleKey, {
+  return createClient(process.env.SUPABASE_URL!, serviceRoleKey, {
     auth: { autoRefreshToken: false, persistSession: false },
   });
 }

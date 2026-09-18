@@ -51,7 +51,7 @@ export async function getPublicBusinessSettings(): Promise<PublicBusinessSetting
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!serviceRoleKey) return withContactLinks(defaultBusinessSettings);
 
-  const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, serviceRoleKey, {
+  const supabase = createClient(process.env.SUPABASE_URL!, serviceRoleKey, {
     auth: { autoRefreshToken: false, persistSession: false },
   });
   const { data, error } = await supabase.from("business_settings").select("name, phone, whatsapp, email, address, maps_url, description").eq("id", "default").maybeSingle();

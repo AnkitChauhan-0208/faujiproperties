@@ -47,7 +47,7 @@ export async function notifyNewEnquiry(enquiryId: string) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
   const from = process.env.RESEND_FROM_EMAIL?.trim();
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseUrl = process.env.SUPABASE_URL;
 
   if (!serviceRoleKey || !supabaseUrl) {
     console.error("Enquiry notification skipped: Supabase server configuration is missing.");
